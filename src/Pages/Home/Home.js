@@ -1,13 +1,14 @@
 import React from 'react';
-import BannerOne from './BannerOne';
+import Footer from '../Sheared/Footer/Footer';
+import BannerOne from './BannerPrimary';
 import BannerTwo from './BannerTwo';
 
 const Home = () => {
     return (
         <div>
-            <h1>this is Home</h1>
             <BannerOne></BannerOne>
-            <BannerTwo></BannerTwo>
+            {/* <BannerTwo></BannerTwo> */}
+            <Footer></Footer>
         </div>
     );
 };
