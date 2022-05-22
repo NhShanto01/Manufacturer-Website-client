@@ -1,7 +1,7 @@
 [
     {
         "_id": "1",
-        "price": "$140",
+        "price": "$75",
         "order": 1500,
         "available": 10000,
         "image": "https://i.ibb.co/W5YzjRj/headlights-part-750x500.jpg",
@@ -10,7 +10,7 @@
     },
     {
         "_id": "2",
-        "price": "$327",
+        "price": "$90",
         "order": 1500,
         "available": 10000,
         "image": "https://i.ibb.co/GFdBcrJ/Car-battery-750x500.jpg",
@@ -19,7 +19,7 @@
     },
     {
         "_id": "3",
-        "price": "$350",
+        "price": "$150",
         "order": 1500,
         "available": 10000,
         "image": "https://i.ibb.co/Jqqynj5/pistons-engine-car-750x500.png",
@@ -28,7 +28,7 @@
     },
     {
         "_id": "4",
-        "price": "$137",
+        "price": "$40",
         "order": 1500,
         "available": 10000,
         "image": "https://i.ibb.co/6byLFD7/wiper-blades.jpg",
@@ -37,7 +37,7 @@
     },
     {
         "_id": "5",
-        "price": "$265",
+        "price": "$100",
         "order": 1500,
         "available": 10000,
         "image": "https://i.ibb.co/VvpyJhK/Speedometer-750x500.jpg",
@@ -46,7 +46,7 @@
     },
     {
         "_id": "6",
-        "price": "$155",
+        "price": "$80",
         "order": 1500,
         "available": 10000,
         "image": "https://i.ibb.co/WHmCcsK/wheel-parts-750x500.jpg",
@@ -55,7 +55,7 @@
     },
     {
         "_id": "7",
-        "price": "$188",
+        "price": "$100",
         "order": 1500,
         "available": 10000,
         "image": "",
@@ -64,7 +64,7 @@
     },
     {
         "_id": "8",
-        "price": "$98",
+        "price": "$65",
         "order": 1500,
         "available": 10000,
         "image": "",
@@ -73,7 +73,7 @@
     },
     {
         "_id": "9",
-        "price": "$195",
+        "price": "$55",
         "order": 1500,
         "available": 10000,
         "image": "",
@@ -82,7 +82,7 @@
     },
     {
         "_id": "10",
-        "price": "$120",
+        "price": "$50",
         "order": 1500,
         "available": 10000,
         "image": "",
@@ -91,7 +91,7 @@
     },
     {
         "_id": "11",
-        "price": "$350",
+        "price": "$200",
         "order": 1500,
         "available": 10000,
         "image": "",
@@ -100,7 +100,7 @@
     },
     {
         "_id": "12",
-        "price": "$265",
+        "price": "$120",
         "order": 1500,
         "available": 10000,
         "image": "",
