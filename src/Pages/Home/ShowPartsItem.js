@@ -22,7 +22,7 @@ const ShowPartsItem = ({ tools }) => {
                     <p>Available Quantity : {available}</p>
                     <p>Price : {price} (per unite)</p>
                     <p>{description}</p>
-                    <div className="card-actions justify-end">
+                    <div className="card-actions justify-center">
                         {/* <button
                             onClick={() => navigateToPurchase(_id)} className="btn btn-primary">Buy Now
                         </button> */}

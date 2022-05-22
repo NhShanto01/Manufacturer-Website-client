@@ -26,9 +26,9 @@ const Home = () => {
                     ></ShowPartsItem>)
                 }
             </div>
-            {/* <BannerTwo></BannerTwo> */}
             <Reviews></Reviews>
             <GetInTouch></GetInTouch>
+            <BannerTwo></BannerTwo>
             <Footer></Footer>
         </div>
     );
