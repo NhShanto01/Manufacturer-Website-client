@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ShowPartsItem = ({ tools }) => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const { _id, name, image, price, order, description, available } = tools;
 
-    // const navigateToPurchase = id => {
-    //     navigate(`/Parts/${id}`);
-    // }
+    const navigateToPurchase = id => {
+        navigate(`/Parts/${id}`);
+    }
 
     return (
         <div>
@@ -23,11 +23,8 @@ const ShowPartsItem = ({ tools }) => {
                     <p>Price : {price} (per unite)</p>
                     <p>{description}</p>
                     <div className="card-actions justify-center">
-                        {/* <button
-                            onClick={() => navigateToPurchase(_id)} className="btn btn-primary">Buy Now
-                        </button> */}
-                        <Link to="/purchase"
-                            className="btn btn-primary">Buy Now
+                        <Link to="/purchase">
+                            <button onClick={() => navigateToPurchase(_id)} className='btn btn-primary text-black'>Buy Now </button>
                         </Link>
                     </div>
                 </div>

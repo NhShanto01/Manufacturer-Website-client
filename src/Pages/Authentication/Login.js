@@ -1,17 +1,15 @@
-import React, { useRef } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useForm } from "react-hook-form";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Loading from '../Sheared/Loading/Loading';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Login = () => {
-    const emailRef = useRef('');
-    const passRef = useRef('');
-    const navigate = useNavigate(false);
-    const location = useLocation();
-
+    const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -19,92 +17,98 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
 
+    let signInError;
+    const navigate = useNavigate();
+    const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    useEffect(() => {
+        if (user || userG) {
+            navigate(from, { replace: true });
+        }
+    }, [user, userG, from, navigate])
 
-    if (loading || loadingG || sending) {
+    if (loading || loadingG) {
         return <Loading></Loading>
     }
 
-    if (user || userG) {
-        navigate(from, { replace: true });
-    }
-    let createError;
     if (error || errorG) {
-        createError = <p className='text-danger'>Error: {error?.message}</p>
+        signInError = <p className='text-red-500'><small>{error?.message || errorG?.message}</small></p>
     }
 
-    const handleLogin = event => {
-        event.preventDefault();
-        const email = emailRef.current.value;
-        const password = passRef.current.value;
-
-        signInWithEmailAndPassword(email, password);
-    }
-    const navigateRegister = () => {
-        navigate('/register');
-    }
-
-    const resetPass = async () => {
-        const email = emailRef.current.value;
-        if (email) {
-            await sendPasswordResetEmail(email);
-            toast('Sent email');
-        }
-        else {
-            toast.warn('please enter your email address');
-        }
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password);
     }
 
     return (
-        <section id='login'>
-            <div className='flex h-screen justify-center items-center'>
-                <div className='card w-96 bg-base-100 shadow-xl'>
-                    <div className='card-body'>
-                        <h2 className='text-center text-2xl font-bold'>Please Login</h2>
+        <div className='flex h-screen justify-center items-center'>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div className="divider text-accent"></div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid Email'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is Required'
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Must be 6 characters or longer'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            </label>
+                        </div>
 
-                        <p className='text-start'><small>If you haven't any account of <span className='text-accent font-bold'>Auto Parts</span> ? <Link to="/register" className='no-underline text-accent' onClick={navigateRegister}>Please Register</Link></small> </p>
-
-                        <from onSubmit={handleLogin} className='text-start mt-3'>
-
-
-                            <div className='form-control w-full max-w-xs'>
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-
-                                <input type="email" className='input input-bordered w-full max-w-xs mb-4' ref={emailRef} placeholder="Enter email" required />
-                            </div>
-
-                            <div className='form-control w-full max-w-xs'>
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-
-                                <input type="password" className='input input-bordered w-full max-w-xs mb-4' ref={passRef} placeholder="Enter password" required />
-                            </div>
-
-                            <input className='btn w-full max-w-xs text-black bg-primary hover:bg-accent' type="submit" value="Login" />
-                        </from>
-                        {createError}
-
-
-                        <p className='text-start'><small>Forget Password? <button className=' no-underline text-accent' onClick={resetPass}>Reset Password</button></small></p>
-                        <div className="divider">OR</div>
-                        <button
-                            onClick={() => signInWithGoogle()}
-                            className="btn btn-outline text-black bg-primary hover:bg-accent"
-                        >Continue with Google</button>
-
-                    </div>
+                        {signInError}
+                        <input className='btn w-full max-w-xs text-black bg-primary hover:bg-accent' type="submit" value="LogIn" />
+                    </form>
+                    <p><small>If you haven't any account of <span className='font-bold text-primary'>Auto Parts </span><Link className='text-accent' to="/register">Create New Account</Link></small></p>
+                    <div className="divider">OR</div>
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className="btn btn-outline text-black bg-primary hover:bg-accent"
+                    >Continue with Google</button>
                 </div>
             </div>
-        </section>
+        </div >
     );
 };
 

@@ -7,6 +7,7 @@ import Login from './Pages/Authentication/Login';
 import Register from './Pages/Authentication/Register';
 import NotFound from './Pages/Sheared/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
+import RequireAuth from './Pages/RequirePages/RequireAuth';
 
 
 function App() {
@@ -19,7 +20,11 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
 
-        <Route path='/purchase' element={<PurchaseItems></PurchaseItems>}></Route>
+        <Route path='/purchase' element={
+          <RequireAuth>
+            <PurchaseItems></PurchaseItems>
+          </RequireAuth>
+        }></Route>
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
 

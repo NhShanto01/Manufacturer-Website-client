@@ -2,7 +2,7 @@
     {
         "_id": "1",
         "price": "$75",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
         "image": "https://i.ibb.co/W5YzjRj/headlights-part-750x500.jpg",
         "name": "Headlights",
@@ -11,7 +11,7 @@
     {
         "_id": "2",
         "price": "$90",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
         "image": "https://i.ibb.co/GFdBcrJ/Car-battery-750x500.jpg",
         "name": "Battery",
@@ -20,7 +20,7 @@
     {
         "_id": "3",
         "price": "$150",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
         "image": "https://i.ibb.co/Jqqynj5/pistons-engine-car-750x500.png",
         "name": "Piston",
@@ -29,7 +29,7 @@
     {
         "_id": "4",
         "price": "$40",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
         "image": "https://i.ibb.co/6byLFD7/wiper-blades.jpg",
         "name": "Windshield Wipers",
@@ -38,7 +38,7 @@
     {
         "_id": "5",
         "price": "$100",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
         "image": "https://i.ibb.co/VvpyJhK/Speedometer-750x500.jpg",
         "name": "Speedometer",
@@ -47,7 +47,7 @@
     {
         "_id": "6",
         "price": "$80",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
         "image": "https://i.ibb.co/WHmCcsK/wheel-parts-750x500.jpg",
         "name": "Custom Wheels",
@@ -56,54 +56,54 @@
     {
         "_id": "7",
         "price": "$100",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
-        "image": "",
+        "image": "https://ibb.co/R0KVPYb",
         "name": "Grilles",
         "description": "Out of all the complex car body parts names, headlights are pretty commonly known by everyone. Car headlights are lights attached to the front of the vehicle on each side to light up the road ahead.\r\n"
     },
     {
         "_id": "8",
         "price": "$65",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
-        "image": "",
+        "image": "https://ibb.co/R0KVPYb",
         "name": "Oil Filter",
         "description": "Out of all the complex car body parts names, headlights are pretty commonly known by everyone. Car headlights are lights attached to the front of the vehicle on each side to light up the road ahead.\r\n"
     },
     {
         "_id": "9",
         "price": "$55",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
-        "image": "",
+        "image": "https://ibb.co/R0KVPYb",
         "name": "Engine Fan",
         "description": "Out of all the complex car body parts names, headlights are pretty commonly known by everyone. Car headlights are lights attached to the front of the vehicle on each side to light up the road ahead.\r\n"
     },
     {
         "_id": "10",
         "price": "$50",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
-        "image": "",
+        "image": "https://ibb.co/R0KVPYb",
         "name": "Rear View Mirror",
         "description": "Out of all the complex car body parts names, headlights are pretty commonly known by everyone. Car headlights are lights attached to the front of the vehicle on each side to light up the road ahead.\r\n"
     },
     {
         "_id": "11",
         "price": "$200",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
-        "image": "",
+        "image": "https://ibb.co/R0KVPYb",
         "name": " Axle",
         "description": "Out of all the complex car body parts names, headlights are pretty commonly known by everyone. Car headlights are lights attached to the front of the vehicle on each side to light up the road ahead.\r\n"
     },
     {
         "_id": "12",
         "price": "$120",
-        "order": 1500,
+        "order": 500,
         "available": 10000,
-        "image": "",
+        "image": "https://ibb.co/R0KVPYb",
         "name": "Header and Nose Panel",
         "description": "Out of all the complex car body parts names, headlights are pretty commonly known by everyone. Car headlights are lights attached to the front of the vehicle on each side to light up the road ahead.\r\n"
     }
