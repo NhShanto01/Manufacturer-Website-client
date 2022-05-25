@@ -7,7 +7,7 @@ const ShowPartsItem = ({ tools }) => {
     const { _id, name, image, price, order, description, available } = tools;
 
     const navigateToPurchase = id => {
-        navigate(`/Parts/${id}`);
+        navigate(`/purchase/${id}`);
     }
 
     return (
@@ -23,9 +23,9 @@ const ShowPartsItem = ({ tools }) => {
                     <p>Price : {price} (per unite)</p>
                     <p>{description}</p>
                     <div className="card-actions justify-center">
-                        <Link to="/purchase">
-                            <button onClick={() => navigateToPurchase(_id)} className='btn btn-primary text-black'>Buy Now </button>
-                        </Link>
+
+                        <button onClick={() => navigateToPurchase(_id)} className='btn btn-primary text-black'>Buy Now </button>
+
                     </div>
                 </div>
             </div>
