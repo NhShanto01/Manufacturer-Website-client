@@ -7,26 +7,27 @@ import auth from '../../firebase.init';
 const PurchaseItems = () => {
     const [user] = useAuthState(auth);
     const { id } = useParams();
-    const { tools, setTools } = useState([]);
+    const [tools, setTools] = useState([]);
+    console.log(tools);
     const navigate = useNavigate()
-    // console.log(id);
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/parts/${id}`)
             .then(res => res.json())
             .then(data => setTools(data))
-    }, [id])
+    }, [])
 
     const handlePlaceOrder = event => {
         event.preventDefault();
 
         const purchase = {
-            // productName: tools.name,
+            productName: tools.name,
             customer: user.email,
             customerName: user.displayName,
             phone: event.target.phone.value,
             // price: tools.price,
-            Address: event.target.Address.value
+            address: event.target.address.value
         }
         console.log(purchase);
 
@@ -49,6 +50,21 @@ const PurchaseItems = () => {
     return (
         <div className='flex h-screen justify-around items-center'>
 
+
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <figure>
+                    <img src={tools.image} alt="Parts" />
+                </figure>
+                <div className="card-body">
+                    <h2 className="card-title">{tools.name}</h2>
+                    <p>Order Quantity : {tools.order} (minimum)</p>
+                    <p>Available Quantity : {tools.available}</p>
+                    <p>Price : {tools.price} (per unite)</p>
+                    <p>{tools.description}</p>
+
+                </div>
+            </div>
+
             <div className='card w-96 bg-base-100 shadow-xl'>
                 <div className='card-body text-2xl '>
 
@@ -68,7 +84,7 @@ const PurchaseItems = () => {
                         </div>
                         <br />
                         <div className='form-control w-full max-w-xs'>
-                            <input className="pl-2 input input-bordered w-full max-w-xs" type="text" name="Address" placeholder='Address' autoComplete='off' required />
+                            <input className="pl-2 input input-bordered w-full max-w-xs" type="text" name="address" placeholder='Address' autoComplete='off' required />
                         </div>
                         <br />
                         <div className='form-control w-full max-w-xs'>
