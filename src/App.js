@@ -17,6 +17,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 import AddReview from './Pages/Dashboard/AddReview';
+import AllUsers from './Pages/Dashboard/AllUsers';
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
           <Route path='update' element={<UpdateProfile></UpdateProfile>}></Route>
 
           <Route path='review' element={<AddReview></AddReview>}></Route>
+
+          <Route path='alluser' element={<AllUsers></AllUsers>}></Route>
 
         </Route>
 
