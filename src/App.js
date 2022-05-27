@@ -7,6 +7,7 @@ import Login from './Pages/Authentication/Login';
 import Register from './Pages/Authentication/Register';
 import NotFound from './Pages/Sheared/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import RequireAuth from './Pages/RequirePages/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder';
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
