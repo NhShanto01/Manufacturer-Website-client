@@ -6,9 +6,9 @@ import Order from './Orders';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
+
     const [orders, setOrders] = useState([]);
-    console.log(orders);
+
 
     useEffect(() => {
         if (user) {
@@ -23,6 +23,7 @@ const MyOrder = () => {
 
 
     }, [user]);
+    console.log(orders);
 
     return (
         <div>

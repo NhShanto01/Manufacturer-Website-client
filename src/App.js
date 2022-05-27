@@ -14,6 +14,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Contact from './Pages/Contact/Contact';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
 
 
 function App() {
@@ -40,6 +41,12 @@ function App() {
 
           <Route path='manageproduct' element={<ManageProducts></ManageProducts>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+
+          <Route path='manageorders' element={<ManageOrders></ManageOrders>}></Route>
+
+          {/* <Route path='/' element={<></>}></Route>
+
+          <Route path='/' element={<></>}></Route> */}
 
         </Route>
 
