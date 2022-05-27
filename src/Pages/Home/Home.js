@@ -5,7 +5,7 @@ import BannerOne from './BannerPrimary';
 import BannerTwo from './BannerSecondary';
 import BusinessSummary from './BusinessSummary';
 import GetInTouch from './GetInTouch';
-import Reviews from './Reviews';
+import ReviewsCollection from './ReviewsCollection';
 import ShowPartsItem from './ShowPartsItem';
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
                     ></ShowPartsItem>)
                 }
             </div>
-            <Reviews></Reviews>
+            <ReviewsCollection></ReviewsCollection>
             <GetInTouch></GetInTouch>
             <BannerTwo></BannerTwo>
             <Footer></Footer>

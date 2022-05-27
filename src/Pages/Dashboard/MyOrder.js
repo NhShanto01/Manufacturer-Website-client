@@ -10,6 +10,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
 
 
+
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/order?email=${user.email}`, {
@@ -31,10 +32,10 @@ const MyOrder = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>index</th>
                             <th>User Name</th>
                             <th>Product Name</th>
-                            <th>Product Photo</th>
+                            <th>Payment</th>
 
                         </tr>
                     </thead>
@@ -42,7 +43,8 @@ const MyOrder = () => {
                         {
                             orders?.map((order, index) => <Order
                                 order={order}
-                                key={index}
+                                key={order._id}
+                                index={index}
                             ></Order>)
                         }
 

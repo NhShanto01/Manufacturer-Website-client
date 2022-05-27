@@ -26,7 +26,7 @@ const PurchaseItems = () => {
             customer: user.email,
             customerName: user.displayName,
             phone: event.target.phone.value,
-            // price: tools.price,
+            price: tools.price,
             address: event.target.address.value
         }
         console.log(purchase);
@@ -81,6 +81,10 @@ const PurchaseItems = () => {
                         </div>
                         <div className='form-control w-full max-w-xs'>
                             <input className="pl-2 input input-bordered w-full max-w-xs" type="text" value={tools?.name} name="toolsName" placeholder='Tools Name' autoComplete='off' required readOnly disabled />
+                        </div>
+                        <br />
+                        <div className='form-control w-full max-w-xs'>
+                            <input className="pl-2 input input-bordered w-full max-w-xs" type="text" value={tools?.price} name="toolsName" placeholder='Tools Name' autoComplete='off' required readOnly disabled />
                         </div>
                         <br />
                         <div className='form-control w-full max-w-xs'>

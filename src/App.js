@@ -15,6 +15,8 @@ import Contact from './Pages/Contact/Contact';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
+import UpdateProfile from './Pages/Dashboard/UpdateProfile';
+import AddReview from './Pages/Dashboard/AddReview';
 
 
 function App() {
@@ -44,9 +46,9 @@ function App() {
 
           <Route path='manageorders' element={<ManageOrders></ManageOrders>}></Route>
 
-          {/* <Route path='/' element={<></>}></Route>
+          <Route path='update' element={<UpdateProfile></UpdateProfile>}></Route>
 
-          <Route path='/' element={<></>}></Route> */}
+          <Route path='review' element={<AddReview></AddReview>}></Route>
 
         </Route>
 
