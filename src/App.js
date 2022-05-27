@@ -12,6 +12,8 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Contact from './Pages/Contact/Contact';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 
 function App() {
@@ -33,7 +35,12 @@ function App() {
 
         <Route path="dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
+
           <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
+
+          <Route path='manageproduct' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+
         </Route>
 
         <Route path='*' element={<NotFound></NotFound>}></Route>

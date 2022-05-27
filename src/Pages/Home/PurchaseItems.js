@@ -94,6 +94,7 @@ const PurchaseItems = () => {
                         <div className="card-actions justify-center">
                             <button className='btn btn-primary text-black'>Submit</button>
                         </div>
+
                     </form>
                 </div>
             </div>
