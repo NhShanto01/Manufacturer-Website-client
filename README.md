@@ -34,4 +34,3 @@ Both admin and user can update their profile on my profile page.
 - Express.js
 
 
-## Admin Test ID & Password [mr.test@gmail.com] & [test123@]
