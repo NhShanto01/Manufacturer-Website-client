@@ -6,11 +6,10 @@ const Footer = () => {
             <footer className="footer p-10 text-primary bg-black">
                 <div>
                     <span className="footer-title">Company</span>
-                    <a href='/#' className="link link-hover">Home</a>
-                    <a href='/#' className="link link-hover">Blogs</a>
-                    <a href='/#' className="link link-hover">About Us</a>
-                    <a href='/#' className="link link-hover">My Portfolio</a>
-                    <a href='/#' className="link link-hover">Contact</a>
+                    <a href='/' className="link link-hover">Home</a>
+                    <a href='/blogs' className="link link-hover">Blogs</a>
+                    <a href='/portfolio' className="link link-hover">My Portfolio</a>
+                    <a href='/contact' className="link link-hover">Contact</a>
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
@@ -20,9 +19,9 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Social</span>
-                    <a href='/#' className="link link-hover">Facebook</a>
-                    <a href='/#' className="link link-hover">Github</a>
-                    <a href='/#' className="link link-hover">LinkedIn</a>
+                    <a href='/https://www.facebook.com/profile.php?id=100010318328703' className="link link-hover">Facebook</a>
+                    <a href='/https://github.com/NhShanto01' className="link link-hover">Github</a>
+                    <a href='/https://www.linkedin.com/in/md-nur-hossain-shanto-983904229/' className="link link-hover">LinkedIn</a>
                 </div>
             </footer>
             <footer className="footer mb-12 px-10 py-4 border-t bg-black text-base-content border-base-300">

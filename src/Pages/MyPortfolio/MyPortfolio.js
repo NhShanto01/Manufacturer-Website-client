@@ -6,7 +6,7 @@ const MyPortfolio = () => {
 
             <div className='container grid grid-cols-1 lg:grid-cols-2 justify-content-center items-center gap-16 mx-auto '>
                 <div>
-                    <span className="text-2xl">MERN Stack Web Developer</span>
+                    <span className="text-3xl font-bold text-accent">MERN Stack Web Developer</span>
                     <h1 className="my-name">
                         Hello, I'm <span className='text-accent'>Nur Hossain Shanto</span>
                     </h1>
@@ -23,6 +23,11 @@ const MyPortfolio = () => {
 
                     <h3>Tools :</h3>
                     <p>VS Code, Chrome Dev-tool, Github, Figma</p>
+
+                    <br />
+
+                    <h3>Email Address :</h3>
+                    <p className='hover:text-accent'>mdnurhossain940@gmail.com</p>
                 </div>
 
                 <div>
@@ -31,12 +36,18 @@ const MyPortfolio = () => {
 
             </div>
 
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-around items-center gap-12'>
                 <div>
-                    <h3>My Simple MERN Projects :</h3>
+                    <h3 className='mb-4'>My Educational Status :</h3>
+                    <p>I took the HSC exam in December last year <br />
+                        from Nawab Habibullah Model College.</p>
+
+                </div>
+                <div>
+                    <h3 className='mb-4'>My Simple MERN Projects :</h3>
                     <p>Link-1 : <a className='hover:font-bold text-accent' href="https://edu-phillip.web.app/">(Edu-Philip)</a></p>
                     <p>Link-2 : <a className='hover:font-bold text-accent' href="https://sports-zone-8991a.web.app/">(Sports Zone)</a></p>
-                    <p>Link-3 : <a className='hover:font-bold text-accent' href="">(Auto-Parts)</a></p>
+                    <p>Link-3 : <a className='hover:font-bold text-accent' href="https://auto-parts01.web.app/">(Auto-Parts)</a></p>
                 </div>
             </div>
 
