@@ -15,7 +15,7 @@ const AddProduct = () => {
         }
         console.log(purchase);
 
-        fetch('http://localhost:5000/add', {
+        fetch('https://vast-plateau-50068.herokuapp.com/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

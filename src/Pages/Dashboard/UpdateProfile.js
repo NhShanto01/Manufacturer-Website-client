@@ -18,7 +18,7 @@ const PurchaseItems = () => {
         }
         console.log(profile);
 
-        fetch('http://localhost:5000/update', {
+        fetch('https://vast-plateau-50068.herokuapp.com/update', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

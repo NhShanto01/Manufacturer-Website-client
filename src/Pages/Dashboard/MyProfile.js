@@ -10,7 +10,7 @@ const MyProfile = () => {
     const [profile, setProfile] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        fetch(`https://vast-plateau-50068.herokuapp.com/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setProfile(data))
     }, [user])

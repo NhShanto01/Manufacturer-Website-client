@@ -6,7 +6,7 @@ const AddReview = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, event) => {
         console.log(data)
-        const url = ' http://localhost:5000/review';
+        const url = ' https://vast-plateau-50068.herokuapp.com/review';
         fetch(url, {
             method: 'POST',
             headers: {

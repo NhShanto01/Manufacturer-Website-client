@@ -6,7 +6,7 @@ import UserRow from './UserRow';
 const AllUser = () => {
 
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://vast-plateau-50068.herokuapp.com/users', {
         method: 'GET',
 
     }).then(res => res.json()))

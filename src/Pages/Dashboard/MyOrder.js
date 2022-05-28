@@ -14,7 +14,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`https://vast-plateau-50068.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
             })
                 .then(res => res.json())
@@ -30,7 +30,7 @@ const MyOrder = () => {
     const handleCancel = id => {
         const proceed = window.confirm("Are You Sure Want To Delete!!")
         if (proceed) {
-            const url = `http://localhost:5000/delete/order/${id}`
+            const url = `https://vast-plateau-50068.herokuapp.com/delete/order/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

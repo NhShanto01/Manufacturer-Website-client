@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allorder')
+        fetch('https://vast-plateau-50068.herokuapp.com/allorder')
             .then(res => res.json())
             .then(data => setTools(data))
     }, [])
@@ -15,7 +15,7 @@ const ManageOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You Sure Want To Delete!!")
         if (proceed) {
-            const url = `http://localhost:5000/delete/order/${id}`
+            const url = `https://vast-plateau-50068.herokuapp.com/delete/order/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

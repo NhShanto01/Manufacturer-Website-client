@@ -9,7 +9,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You Sure Want To Delate!!")
         if (proceed) {
-            const url = `http://localhost:5000/delete/parts/${id}`
+            const url = `https://vast-plateau-50068.herokuapp.com/delete/parts/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

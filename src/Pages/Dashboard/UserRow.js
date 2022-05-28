@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch, index }) => {
     const { _id, email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://vast-plateau-50068.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers:
                 { 'content-type': 'application/json' },
@@ -28,7 +28,7 @@ const UserRow = ({ user, refetch, index }) => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You Sure Want To Delate!!")
         if (proceed) {
-            const url = `http://localhost:5000/delete/user/${id}`
+            const url = `https://vast-plateau-50068.herokuapp.com/delete/user/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

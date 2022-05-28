@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { price, email, customerName } = order;
 
     useEffect(() => {
-        const url = 'http://localhost:5000/create-payment-intent'
+        const url = 'https://vast-plateau-50068.herokuapp.com/create-payment-intent'
         console.log(url);
         fetch(url, {
             method: 'POST',

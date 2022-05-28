@@ -16,7 +16,7 @@ const PurchaseItems = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${id}`)
+        fetch(`https://vast-plateau-50068.herokuapp.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setTools(data))
     }, [id])
@@ -80,7 +80,7 @@ const PurchaseItems = () => {
         }
         console.log(purchase);
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://vast-plateau-50068.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
