@@ -22,7 +22,6 @@ const MyProfile = () => {
 
     return (
         <div>
-            <h2>this is MyProfile</h2>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='mr-20'>

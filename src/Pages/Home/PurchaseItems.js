@@ -3,23 +3,72 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Sheared/Loading/Loading';
 
 const PurchaseItems = () => {
-    const [user] = useAuthState(auth);
+    const [user, loading, userError] = useAuthState(auth);
     const { id } = useParams();
     const [tools, setTools] = useState([]);
     console.log(tools);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [error, setError] = useState('');
+    const [btnDisable, setBtnDisable] = useState(false);
 
 
     useEffect(() => {
         fetch(`http://localhost:5000/parts/${id}`)
             .then(res => res.json())
             .then(data => setTools(data))
-    }, [])
+    }, [id])
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+
+    const handleBtn = (e) => {
+        let qtn = parseInt(e.target.value);
+        console.log(qtn);
+        let productQtn = parseInt(tools?.available);
+        let inStockQuantity = parseInt(tools?.order)
+        if (qtn > productQtn || qtn <= 100) {
+            // toast.error(Quantity Can't leas then Minimum order ${service?.mnQuantity})
+            setBtnDisable(true);
+        }
+        else if (qtn < inStockQuantity) {
+            // toast.error(We don't have ${productQtn})
+            setBtnDisable(true)
+        }
+        else {
+            setBtnDisable(false);
+        }
+
+    }
+
+
+    // const handleAddItems = e => {
+    //     e.preventDefault();
+    //     let qtn = e.target.orderQuantity.value
+    //     let pPrice = service?.price
+    //     console.log(qtn, pPrice);
+    //     const purchaseItems = {
+    //         email: user?.email,
+    //         image: service?.image,
+    //         price: qtn * pPrice,
+    //         userName: user?.displayName,
+    //         phone: e.target.phone.value,
+    //         address: e.target.address.value,
+    //         productName: service?.name,
+    //         qtn,
+    //         // updatePrice
+    //     }
+    //     console.log(purchaseItems);
 
     const handlePlaceOrder = event => {
         event.preventDefault();
+        let qtn = event.target.order.value
+        let pPrice = tools?.price
+        console.log(qtn, pPrice);
 
         const purchase = {
             productName: tools.name,
@@ -45,6 +94,7 @@ const PurchaseItems = () => {
                 event.target.reset();
                 toast.success('Order Successfully')
             });
+        setError('')
     }
 
     return (
@@ -88,6 +138,10 @@ const PurchaseItems = () => {
                         </div>
                         <br />
                         <div className='form-control w-full max-w-xs'>
+                            <input onBlur={handleBtn} className="pl-2 input input-bordered w-full max-w-xs" type="text" name='order' placeholder='Order Quantity' required />
+                        </div>
+                        <br />
+                        <div className='form-control w-full max-w-xs'>
                             <input className="pl-2 input input-bordered w-full max-w-xs" type="text" name="address" placeholder='Address' autoComplete='off' required />
                         </div>
                         <br />
@@ -95,9 +149,14 @@ const PurchaseItems = () => {
                             <input className="pl-2 input input-bordered w-full max-w-xs" type="text" name="phone" placeholder='phone' required />
                         </div>
                         <br />
+
                         <div className="card-actions justify-center">
-                            <button className='btn btn-primary text-black'>Submit</button>
+                            <button disabled={btnDisable} className='btn btn-primary text-black'>Submit</button>
                         </div>
+
+                        {
+                            error && <p className='text-red-600'>{error}</p>
+                        }
 
                     </form>
                 </div>
@@ -107,3 +166,4 @@ const PurchaseItems = () => {
 };
 
 export default PurchaseItems;
+

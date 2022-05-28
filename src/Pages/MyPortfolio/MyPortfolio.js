@@ -4,7 +4,7 @@ const MyPortfolio = () => {
     return (
         <div>
 
-            <div className='flex justify-around items-center mx-auto gap-x-20'>
+            <div className='container grid grid-cols-1 lg:grid-cols-2 justify-content-center items-center gap-16 mx-auto '>
                 <div>
                     <span className="text-2xl">MERN Stack Web Developer</span>
                     <h1 className="my-name">
@@ -17,7 +17,9 @@ const MyPortfolio = () => {
 
                         I am skilled in HTML, CSS, Bootstrap, TailwindCSS, Javascript(ES6), and MERN (Mongo DB, Express, React, Node) stack.
 
-                    </p><br />
+                    </p>
+
+                    <br />
 
                     <h3>Tools :</h3>
                     <p>VS Code, Chrome Dev-tool, Github, Figma</p>
@@ -26,12 +28,16 @@ const MyPortfolio = () => {
                 <div>
                     <img src="https://i.ibb.co/9tsn2J8/LRM-EXPORT-20180616-183847-2.jpg" alt="" className='w-2/4 my-12' />
                 </div>
+
             </div>
-            <div>
-                <h3>My Simple MERN Projects :</h3>
-                <p>Link-1 : <a className='hover:font-bold text-accent' href="https://edu-phillip.web.app/">(Edu-Philip)</a></p>
-                <p>Link-2 : <a className='hover:font-bold text-accent' href="https://sports-zone-8991a.web.app/">(Sports Zone)</a></p>
-                <p>Link-3 : <a className='hover:font-bold text-accent' href="">(Auto-Parts)</a></p>
+
+            <div className='flex justify-center items-center'>
+                <div>
+                    <h3>My Simple MERN Projects :</h3>
+                    <p>Link-1 : <a className='hover:font-bold text-accent' href="https://edu-phillip.web.app/">(Edu-Philip)</a></p>
+                    <p>Link-2 : <a className='hover:font-bold text-accent' href="https://sports-zone-8991a.web.app/">(Sports Zone)</a></p>
+                    <p>Link-3 : <a className='hover:font-bold text-accent' href="">(Auto-Parts)</a></p>
+                </div>
             </div>
 
         </div>
