@@ -6,7 +6,7 @@ import Loading from '../Sheared/Loading/Loading';
 
 const MyProfile = () => {
     const [user, loading] = useAuthState(auth);
-    console.log(user);
+    // console.log(user);
     const [profile, setProfile] = useState({});
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const MyProfile = () => {
     if (loading) {
         return <Loading></Loading>
     }
-    console.log(profile);
+    // console.log(profile);
 
     return (
         <div>
